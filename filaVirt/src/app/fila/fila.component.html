@@ -1,0 +1,42 @@
+<div *ngIf="showBotoes">
+    <div>
+        <h1>Bem Vindo Ao Laboratório</h1>
+        <h1>Escolha a opção desejada</h1>
+    </div>
+    
+    <div class="filas">
+        <br>
+        <button type="button" id="fila1" (click)="servico(0)">Coleta de exames</button>
+        <button type="button" id="fila2" (click)="servico(1)">Retirada de resultados</button>
+        <button type="button" id="fila3" (click)="servico(2)">Melhor Idade-Prioritário</button>
+        <br>
+        <button type="button" id="adm" (click)="servico(3)">administração</button>
+    </div>
+</div>
+<div *ngIf="showAtendimento">
+    <div>
+        <h1>Tipo de atendimento escolhido:</h1>
+        <input type="text" [value]="exibirTipoAtendimento()" readonly>
+        <br>
+        <h2>posição na fila:</h2>
+        <input type="text" [value]="exibirPosicaoFila()" readonly>
+        <button type="button" id="adm" (click)="voltar()">voltar</button>
+    </div>
+</div>
+<div *ngIf="showAdmin">
+    <div>
+        <h1>Situação da fila</h1>
+        <h5>Coleta de exames</h5>
+        <input type="text" [value]="administracao()[0]" readonly>
+        <br>
+        <h5>Retirada de resultados</h5>
+        <input type="text" [value]="administracao()[1]" readonly>
+        <br>
+        <h5>Melhor Idade-Prioritário</h5>
+        <input type="text" [value]="administracao()[2]" readonly>
+        <br>
+        <h5>total das filas</h5>
+        <input type="text" [value]="administracao()[3]" readonly>
+        <button type="button" id="adm" (click)="voltar()">voltar</button>
+    </div>
+</div>
